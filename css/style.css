@@ -11,8 +11,25 @@
     padding: 50px 15px;
 }
 
+ul{
+    padding-left: 15px;
+    list-style-type: decimal;
+    font-size: 15px;
+    line-height: 25px;
+    color: rgb(61, 61, 61);
+}
+
+li{
+    padding-left: 15px;
+}
+
+.nested-ul{
+    list-style-type: lower-latin;
+}
+
 a{
     text-decoration: none;
+    color: blue;
 }
 
 h2,
