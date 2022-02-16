@@ -55,23 +55,27 @@ $pageArray=[
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
-<?php
-    foreach ($pageArray as $key => $array) {
+<main>
+    <div class="container">
+        <?php
+            foreach ($pageArray as $key => $array) {
 
-        if (!key_exists('title', $array)) {
-            echo "<h4>" . $array['subtitle'] . "</h4>";
-        } else{
-            echo "<h2>" . $array['title'] . "</h2>";
-        }
+                if (!key_exists('title', $array)) {
+                    echo "<h4>" . $array['subtitle'] . "</h4>";
+                } else{
+                    echo "<h2>" . $array['title'] . "</h2>";
+                }
 
-        foreach ($array['paragraph'] as $key => $paragraph) {
-            echo "<p>$paragraph</p>";
-        }
-    }
-?>
-
+                foreach ($array['paragraph'] as $key => $paragraph) {
+                    echo "<p>$paragraph</p>";
+                }
+            }
+        ?>
+    </div>
+</main>
 </body>
 </html>
