@@ -51,6 +51,21 @@ $pageArray=[
             'In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l\'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di URL referrer. Talvolta, l\'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito. Se utilizzi la ricerca SSL (la funzione di ricerca criptata di Google), nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell\'URL negli URL referrer. Questo comportamento può fare eccezione, ad esempio se utilizzi alcuni browser meno diffusi. Ulteriori informazioni sulla ricerca SSL sono disponibili qui. Le query di ricerca o le informazioni contenute nell\'URL referrer potrebbero essere disponibili mediante Google Analytics o un\'API (Application Programming Interface). Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all\' esatte parole chiave che hanno determinato il clic su un annuncio.',
         ],
     ]
+];
+
+$headerLinks=[
+    'Introduzione',
+    'Norme sulla privacy',
+    'Termini di servizio',
+    'Tecnologie',
+    'Domande frequenti',
+];
+
+$footerLinks=[
+    'Google',
+    'Tutto su Google',
+    'Privacy',
+    'Termini',
 ]
 
 ?>
@@ -65,32 +80,50 @@ $pageArray=[
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <div class="header-top">
+            <div>
+                <p>Google</p>
+                <p>Privacy e termini</p>
+            </div>
+            <div>
+                <p>K</p>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <?php
+                foreach ($headerLinks as $link) {
+                    echo "<p>$link</p>";
+                }
+            ?>
+        </div>
+    </header>
     
-<main>
-    <div class="container">
-        <?php
-            foreach ($pageArray as $key => $array) {
+    <main>
+        <div class="container">
+            <?php
+                foreach ($pageArray as $key => $array) {
 
-                echo "<div>";
+                    echo "<div>";
 
-                if (!key_exists('title', $array)) {
-                    echo "<h4>" . $array['subtitle'] . "</h4>";
-                } else{
-                    echo "<h2>" . $array['title'] . "</h2>";
-                }
-
-                foreach ($array['paragraph'] as $key => $paragraph) {
-                    if (!strpos($paragraph, "<li>") || !strpos($paragraph, "<ul>")) {
-                        echo "<p>" . html_entity_decode($paragraph) . "</p>";
-                    } else {
-                        echo html_entity_decode($paragraph);
+                    if (!key_exists('title', $array)) {
+                        echo "<h4>" . $array['subtitle'] . "</h4>";
+                    } else{
+                        echo "<h2>" . $array['title'] . "</h2>";
                     }
-                }
 
-                echo "</div>";
-            }
-        ?>
-    </div>
-</main>
+                    foreach ($array['paragraph'] as $key => $paragraph) {
+                        if (!strpos($paragraph, "<li>") || !strpos($paragraph, "<ul>")) {
+                            echo "<p>" . html_entity_decode($paragraph) . "</p>";
+                        } else {
+                            echo html_entity_decode($paragraph);
+                        }
+                    }
+
+                    echo "</div>";
+                }
+            ?>
+        </div>
+    </main>
 </body>
 </html>
