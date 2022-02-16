@@ -100,3 +100,26 @@ p{
     line-height: 25px;
     color: rgb(61, 61, 61);
 }
+
+footer{
+    background-color: #ccc;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+nav div{
+    display: flex;
+}
+
+nav p{
+    font-size: 11px;
+    color: grey;
+    margin: auto 30px auto 0;
+}

@@ -125,5 +125,26 @@ $footerLinks=[
             ?>
         </div>
     </main>
+
+    <footer>
+        <nav>
+            <div>
+                <?php
+                    foreach ($footerLinks as $link) {
+                        echo "<p>$link - </p>";
+                    }
+                ?>
+            </div>
+            <div>
+                <select name="" id="">
+                    <option value="">Italiano</option>
+                    <option value="">Inglese</option>
+                    <option value="">Tedesco</option>
+                    <option value="">Francese</option>
+                    <option value="">Spagnolo</option>
+                </select>
+            </div>
+        </nav>
+    </footer>
 </body>
 </html>
