@@ -11,6 +11,10 @@
     padding: 50px 15px;
 }
 
+a{
+    text-decoration: none;
+}
+
 h2,
 h4{
     margin: 50px 0 15px 0;
