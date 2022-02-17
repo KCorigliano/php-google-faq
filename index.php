@@ -113,10 +113,10 @@ $footerLinks=[
                     }
 
                     foreach ($array['paragraph'] as $key => $paragraph) {
-                        if (!strpos($paragraph, "<li>") || !strpos($paragraph, "<ul>")) {
-                            echo "<p>" . html_entity_decode($paragraph) . "</p>";
-                        } else {
+                        if (strpos($paragraph, "<li>") !== false || strpos($paragraph, "<ul>") !== false) {
                             echo html_entity_decode($paragraph);
+                        } else {
+                            echo "<p>" . html_entity_decode($paragraph) . "</p>";
                         }
                     }
 
